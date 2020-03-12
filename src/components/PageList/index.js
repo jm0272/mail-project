@@ -1,4 +1,4 @@
-import PageList from './PageList';
-export default PageList;
+// import PageList from './PageList';
+//export default PageList;
 
-//export {default} from './PageList';
+export {default} from './PageList';

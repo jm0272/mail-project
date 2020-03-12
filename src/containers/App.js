@@ -1,26 +1,31 @@
-/* import React, { Component } from 'react';
-import CounterContainer from './CounterContainer';
- 
+/***
+ * 일정관리 App
+ */
+import React, { Component } from 'react';
+import PageTemplate from '../components/PageTemplate';
+import PageInputContainer from '../containers/PageInputContainer';
+import PageListContainer from '../containers/PageListContainer';
+
 class App extends Component {
     render() {
         return (
-            <div>
-                <button>
-                    추가
-                </button>
-                <button>
-                    제거
-                </button>
-                <CounterContainer/>
-            </div>
+            <PageTemplate>
+                <PageInputContainer></PageInputContainer>
+                <PageListContainer></PageListContainer>
+            </PageTemplate>
         );
     }
 }
 
-export default App; */
+export default App;
 
 
-import React, { Component } from 'react';
+
+
+/***
+ * CounterList  App
+ */
+/* import React, { Component } from 'react';
 import CounterListContainer from './CounterListContainer';
 import Button from '../components/Button';
 import * as actions from '../actions';
@@ -55,6 +60,6 @@ const mapDispatchToProps = (dispatch) => ({
     remove : () => dispatch(actions.remove()),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App); */
 
 
