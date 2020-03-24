@@ -13,7 +13,8 @@ function* insertInput$(action){
         yield call(todosActions.insertInput, payload);
         yield put({ type: todosActions.INSERT_SUCCESS, payload: payload });
     } catch(e){
-
+        console.log('exception 발생');
+        yield put({ type: todosActions.INSERT_FAILURE, payload: '입력에 실패했습니다.' });
     }
 
 }

@@ -18,21 +18,23 @@ export const onToggle = createAction(TOGGLE);
 export const onRemove = createAction(REMOVE);
 
 
-// promise
+// API
 export const insertInput = (input) => {
     return new Promise(
-        (resolve) => {
-            setTimeout(()=>{
-                console.log('1초 후 입력:', input);
-                resolve(input);
-            },1000);
-        },
-        (reject) => {
-
+        (resolve, reject) => {
+            console.log('promise 구문, ', input);
+            if(input.text === '0'){
+                reject('err 발생');
+            }
+            else{
+                setTimeout(()=>{
+                    console.log('1초 후 입력:', input);
+                    resolve(input);
+                },1000);
+            }
         }
     );
 }
-
 
 // 초기값
 const initialState = List([
@@ -58,6 +60,10 @@ export default handleActions({
             text : text,
             isBold : isBold
         }));
+    },
+    [INSERT_FAILURE] : (state, action) => {
+        alert('실패');
+        return state;
     },
     [TOGGLE] : (state, action) => {
         // const index = action.payload;
